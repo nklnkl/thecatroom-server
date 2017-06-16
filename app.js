@@ -12,9 +12,15 @@ io.on('connection', function(socket){
   });
 
   // upon message.
+  socket.on('connected', function(msg){
+    console.log(new Date().toTimeString() + ' ' + msg);
+    io.emit(new Date().toTimeString() + ' ' + msg);
+  });
+
+  // upon message.
   socket.on('message', function(msg){
-    console.log(msg);
-    socket.broadcast.emit(msg);
+    console.log(new Date().toTimeString() + ' ' + msg);
+    socket.emit('message', new Date().toTimeString() + ' ' + msg);
   });
 });
 
