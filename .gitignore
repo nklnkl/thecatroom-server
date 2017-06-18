@@ -117,3 +117,4 @@ internal/
 !tests/baselines/reference/project/nodeModules*/**/*
 .idea
 yarn.lock
+dist
